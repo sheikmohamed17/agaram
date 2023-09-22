@@ -1,0 +1,49 @@
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="login.css"/>
+    </head>
+    <body>
+        <div id="login">
+            Login
+            <form>
+            Email-id<input type="text" id="mail"/><br>
+            Password<input type="password" id="password"/><br>
+            <input type="button" onclick="logincheck()" value="login">
+            <input type="button" onclick="registerpage()" value="registerpage">
+        </div>
+        <div id="loginpage">
+            <p id='Welcome'>Welcome</p>
+            <input type="button" onclick="logout()" value="logout"> 
+            <table border="2" >
+                <thead>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody  id="tabledata">
+                    
+                </tbody>
+            </table>
+        </div>
+        <div id="registr">
+            <form action="">
+            Name<input type="text" id="newname"/>
+            Email<input type="email" id="newemail"/>
+            password<input type="password" id="paswrds"/>
+            <input type="button" onclick="register()"value="register"/>
+            </form>
+        </div>
+        <div id="update">
+            newname<input type="text" name="newname"/>
+            email<input type="text" name="newemail"/>
+            password<input type="password" name="newpaswrd"/>
+            <input type="button" onclick="updatedata()" value="update"/>
+        </div>
+    </body>
+<script src="login.js" type="text/javascript">
+checklogin()
+    </script>
+
+</html>

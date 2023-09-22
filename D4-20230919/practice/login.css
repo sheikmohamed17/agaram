@@ -1,0 +1,17 @@
+#loginpage{
+    display:none;
+}
+#login{
+    text-align: center;
+    
+}
+#login button{
+    border-radius:20px ;
+    font-family:'Times New Roman', Times, serif;
+}
+#registr{
+    display: none;
+}
+#update{
+    display:none;
+}

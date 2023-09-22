@@ -1,0 +1,21 @@
+let userDetails=[
+    {
+    email:"shei@gmail.com",
+    password:"123456",
+    name:"sheik"
+}
+]
+localStorage.setItem("user",JSON.stringify(userDetails))
+function loger(){
+    alert("Success")
+}
+function loginCheck(){
+    let login_email=document.getElementById("email").value;
+    let login_password=document.getElementById("password").value;
+    var details=JSON.parse(localStorage.getItem("user"))
+    for (var i=0;i<details.length;i++)
+    console.log(details[i].email,details[i].password,details[i].name)
+    if (details[i].email==login_email,details[i].password==login_password)
+    alert("Success")
+
+}
