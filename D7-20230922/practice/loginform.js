@@ -54,7 +54,7 @@ function logincheck()
                 let name=parsegetdata[i].name  
                 localStorage.setItem("loggedin",true)
                 localStorage.setItem('loged_user_name',name)
-            document.getElementById('Welcome').innerHTML=`welcome ${name}`
+            // document.getElementById('Welcome').innerHTML=`welcome ${name}`
                 
                 window.location="home.html" 
                 break
@@ -89,8 +89,8 @@ function registerpage()
 
 function datatable()
     {
-
-    // document.getElementById('Welcome').innerHTML=`welcome ${}`
+    
+    document.getElementById('Welcome').innerHTML=`welcome ${name}`
     let tdata=localStorage.getItem('data')
     let tparsedata=JSON.parse(tdata)
     let tablecontent='';
