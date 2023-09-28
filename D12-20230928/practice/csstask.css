@@ -1,0 +1,27 @@
+body{
+    background-color:bisque
+}
+#firstparent{
+    background-color: blue;
+    width: fit-content;
+    padding: 8%;
+
+}
+ul{
+    background-color: chartreuse;
+    width: fit-content;
+    position: absolute;
+}
+#p21{
+    background-color: aqua;
+}
+#son1{
+    background-color: azure;
+    position:absolute;
+    bottom:0px;
+    left:0px
+}
+#grandp{
+    background-color: aquamarine;
+    position: relative;
+}

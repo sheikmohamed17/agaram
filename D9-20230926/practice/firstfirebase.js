@@ -115,7 +115,7 @@ function getItem() {
 function deleted(mail)
 {
     alert(mail)
-    // dataRef.once('value').then(function(del){
+    dataRef.once('value').then(function(del){
     let data=[]
     for(let i=0;i<all_data.length;i++)
       if(all_data[i].mail!=mail)
@@ -125,6 +125,6 @@ function deleted(mail)
       } 
       db.ref("registeredUsers").set(data)
       getItem()
-    // })
+     })
 }
 getdata()
