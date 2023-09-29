@@ -115,16 +115,14 @@ function getItem() {
 function deleted(mail)
 {
     alert(mail)
-    // dataRef.once('value').then(function(del){
     let data=[]
-    for(let i=0;i<all_data.length;i++)
-      if(all_data[i].mail!=mail)
-      {
-        // all_data[i].push(data)
-        data.push(all_data[i])
-      } 
-      db.ref("registeredUsers").set(data)
-      getItem()
-    // })
+    for(let i=0;i<all_data.length;i++){
+        if(all_data[i].email!=mail)
+        {
+            data.push(all_data[i])
+        }
+        db.ref("registeredUsers").set(data)
+        getdata()
+    }
 }
 getdata()
