@@ -1,0 +1,17 @@
+#header{
+    height: 20px;
+    width: 100%;
+    background-color: blue;
+    position: fixed;
+}
+imgtext{
+    position: relative;
+    width:100%
+}
+#text{
+    position:absolute;
+    top:100;
+    left:100;
+    color: white;
+    
+}
