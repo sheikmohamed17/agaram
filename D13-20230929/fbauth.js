@@ -13,26 +13,34 @@ const firebaseConfig = {
         console.log('database',db)
   var dataRef = db.ref("registeredUsers");
   var auth=firebase.auth()
-  console.log("s",auth)
-  const login=()=>{
-    var name = document.getElementById("name").value;
-    let user_detail=document.getElementById("Email").value
-    let Password=document.getElementById("password").value
-    auth.signInWithEmailAndPassword(user_detail,Password)
-    .then((result) => {
-      // Signed in
-      alert("loggedin successfully")
-    })
-}
-function logqin()
-{
-    alert('login sucessfull');
-    window.location="fbauth_home.html";
-}
-function register(){
-    alert('sucess')
-}
+  console.log("auth",auth)
 function registerpage(){
     window.location='fbauth_reg.html'
 }
-console.log('hi')
+ console.log('hi')
+
+                   
+ function submitForm(){
+   var user_name=document.getElementById('name').value;
+   var user_email=document.getElementById('email').value;
+   var user_password=document.getElementById('password').value;
+   auth.createUserWithEmailAndPassword(user_name,user_email,user_password).then((result)=>{
+    alert("register sucess")
+    console.log(result)
+   })
+   .catch((error)=>{
+    console.log(error.code)
+   })
+ }
+//   }
+
+function loginForm(){
+  let user_email=document.getElementById('email').value;
+  let user_password=document.getElementById('password').value;
+  auth.signInWithEmailAndPassword(user_email,user_password).then((result) =>{
+    alert("login successfully")
+    })
+    .catch((error)=> {
+      console.log(error);
+    });
+}

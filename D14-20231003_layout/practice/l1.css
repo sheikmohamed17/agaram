@@ -1,0 +1,25 @@
+h1{
+    background-color: rgb(108, 255, 41);
+    color: white;
+    text-align: center;
+    padding: 2%;
+    position: relative;
+    display: inline-block;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+#header{
+    /* position: relative; */
+    display: inline-block;
+}
+#listitem{
+    position: absolute;
+    top:0px;
+    left:0px;
+    display: inline-block;
+}
+h3{
+    color: darkblue;
+}

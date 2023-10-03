@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="ffb_bs.css">
+    </head>
+    <body class="position-relative">
+        <div class="position-absolute top-50 start-50 translate-middle">
+        <div class=" text-center ">Login
+        <div id="reg" class="grid gap-0 row-gap-3 opacity-100">
+            <div class="p-2 g-col-1">E-mail_id:<input type="text" id="Email"placeholder="Enter the mail" class="rounded-pill transparent-input"/></div>
+            <div class="p-2 g-col-1 opacity-10"> Password:<input type="password" placeholder="password for the mail" id="password" class="rounded-pill transparent-input"/><br></div>
+            <div class="btngrp grid gap-0 column-gap-3">
+            <input type="button" class="btn btn-outline-light btn-sm d-flex align-items-center" id="btn" onclick="login()" value="login"/>
+            <!-- <input type="button" class="btn btn-outline-light btn-sm  p-2 g-col-6"  id="btn" onclick="registerpage()" value="register"/> -->
+             Do you not have a account
+              <!-- <a href="ffbrp_bs.html" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"> register <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg></a> --> -->
+            <a class="icon-link icon-link-hover" style="--bs-link-hover-color-rgb: 25, 135, 84;" href="ffbrp_bs.html">
+                register
+                <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+              </a>
+        </div>
+        </div>
+        </div>
+        </div>
+    </body>
+    <script src="ffb_bs.js" text="type/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>

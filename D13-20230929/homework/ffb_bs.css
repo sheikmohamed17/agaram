@@ -1,0 +1,17 @@
+body{
+    background-image: url(bgi1.jpeg);
+    color: rgb(248, 247, 244);
+    font:caption;
+}
+.btn{
+    border-radius: 25px;
+    gap:100%;
+}
+input.transparent-input{
+    background-color:rgba(0,0,0,0) !important;
+    border:none !important;
+    color: white;
+ }
+ caption{
+    color: white;
+ }
