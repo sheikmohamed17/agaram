@@ -1,0 +1,14 @@
+#header{
+    background-color: rgb(162, 234, 234);
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: xx-large;
+    font-style: italic;
+    font-weight: bolder;
+    position: static;
+}
+*{
+    margin: 0;
+    padding: 0;
+}

@@ -1,25 +1,126 @@
 h1{
-    background-color: rgb(108, 255, 41);
+    background-color: rgb(178, 238, 151);
     color: white;
     text-align: center;
     padding: 2%;
     position: relative;
-    display: inline-block;
+}
+body{
+    color:rgb(178, 238, 151);
+}
+*Which{
+    background-color: rgb(178, 238, 151);
 }
 *{
     margin: 0;
     padding: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
 }
 #header{
-    /* position: relative; */
-    display: inline-block;
+    position: sticky;
+    position:relative;
 }
-#listitem{
+#list-item{
+    position: absolute;
+}
+#About{
     position: absolute;
     top:0px;
-    left:0px;
-    display: inline-block;
+    right:190px;
 }
-h3{
-    color: darkblue;
+#Home{
+    position: absolute;
+    top:0px;
+    right:250px;
+}
+#home{
+    background-color: rgb(212, 188, 145);
+}
+#Study{
+    position: absolute;
+    top:0px;
+    right:70px;
+}
+#Contact{
+    position: absolute;
+    top:0px;
+    right:0px;
+}
+#c{
+    display: flex;
+    flex-direction:row;
+    background-color: aqua;
+    border: 1px solid red;
+}
+#a1{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(77, 216, 231);
+    border: 1px solid red;
+}
+#a2{
+display: flex;
+    flex-direction: row;
+    background-color: rgb(36, 228, 142);
+    border: 1px solid rgb(14, 148, 244);
+}
+h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgba(18, 201, 177, 0.413);
+
+}
+.about{
+    background: rgb(12, 196, 169);
+    display: flex;
+}
+#left{
+    display: flex;
+    flex-direction: column;
+}
+#para{
+    display: flex;
+    flex-direction: column;
+}
+.a1{
+    letter-spacing: 2;
+}
+#portion{
+    background-color: rgb(185, 225, 126);
+    display: flex;
+}
+#fe{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 33%;
+    align-items: center;
+    
+}
+#why{
+    font-size: xx-large;
+    display:block;
+    font-weight: 800;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(178, 238, 151);
+    
+}
+#be{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 33%;
+    align-items: center;
+
+}
+img{
+    width: 85%;
+}
+#db{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    border: 1px solid black;
+    align-items: center;
+
 }

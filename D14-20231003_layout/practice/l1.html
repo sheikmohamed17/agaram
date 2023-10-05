@@ -2,17 +2,79 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="l1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>layout with flex</title>
 </head>
-<body class="body">
+<body>
     <div class="header">
         <h1>Welcome to Agaram Academy</h1>
         <div class="listitem">
-            <a href="#">About</a>
-        </div>
-        ,<h3>h</h3>
+            <a href="#home" id="Home">Home</a>
+            <a href="#about" id="About">About</a>
+            <a href="#portion" id="Study">course detailes</a>
+            <a href="#contact" id="Contact">contact</a>
     </div>
+    </div>
+    <section id="home">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <img src="aglo.jpeg"class="img-fluid">
+                    </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <h2>Why Agaram...?</h2>
+                    <p class="para"><b>Agaram Software Academy </b><br>
+                    Our Aim Should be a high profiled Developer we can start the academy because of many student in india are educated but not skilled so we offer a skill and we cn got a placement assistance in a good company near our surrondings,and chennai also <br> We have good teaching staff with more than 10 years experience in IT field
+                    <br>We can give the best circumstances and give the good communication also </p>
+        </div>
+    </section>
+    <div>
+        <h2  id="why">Why Become a FullStack Developer</h2>
+    <section class="about">
+        
+        <div id="c">
+        <div id="a1">What is FullStack
+            A FullStack is a combination of frontend and backend with database
+            you can design the web page and also do some backend operation
+            A full-stack developer is a professional who has expertise in both front-end and back-end web development. They are capable of working on all aspects of a web application, from designing and creating the user interface (front-end) to developing the server-side logic, databases, and server infrastructure (back-end).
+
+        </div>
+        <div id="a2">
+            In essence, a full-stack developer can handle tasks related to client-side technologies like HTML, CSS, and JavaScript for creating the user interface and user experience, as well as server-side technologies like various programming languages (e.g., Python, Java, JavaScript/Node.js, Ruby), databases (e.g., MySQL, PostgreSQL, MongoDB), and server management to ensure the application functions smoothly.</div>
+        <div id="a3">Full-stack developers have numerous opportunities across industries, from web and mobile app development to software engineering and DevOps. They excel in roles ranging from web development, mobile app creation, and UI/UX design to software engineering, DevOps, and product management. Their adaptability makes them valuable in startups, freelancing, and consulting. They can specialize in areas like front-end frameworks or cybersecurity, and their skills are sought after in e-commerce, fintech, and gaming. As technology evolves, full-stack developers remain versatile, offering expertise in both front-end and back-end development, making them a pivotal asset in a wide array of career paths and industries.</div>
+    </section>
+    <section class="course">
+        <h4 class="Which"> Which Portion are all we cover</h4>
+        <div id="portion">
+            <div id="fe">
+                In Front-End we teach the <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Angular JS</li><li>Bootstrap</li></ul>
+            </div>
+            <div id="be">In Back-End we teach the<ul><li>Python</li><li>JS DOM</li></ul></div>
+            <div id="db">DataBase<ul><li>MySQL</li><li>RDBMS</li></ul></div>
+        </div>
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <img src="aglogo.jpeg">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <h1>Contact us</h1>
+                        <form>
+                            <input type="text" class="form-control" placeholder="enter your name">
+                            <input type="text" class="form-control" placeholder="enter your mail">
+                            <input type="text" class="form-control" placeholder="enter your number">
+                            <textarea class="form-control" placeholder="Write the address"></textarea>
+                            <button class="btn btn-success">Order</button>
+    
+
+        </form>
+    </div>
+
+</div>
+</section>
 </body>
 </html>

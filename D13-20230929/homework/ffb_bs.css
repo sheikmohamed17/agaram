@@ -1,6 +1,8 @@
 body{
     background-image: url(bgi1.jpeg);
     color: rgb(248, 247, 244);
+    background-size: cover;
+    background-position: center;
     font:caption;
 }
 .btn{

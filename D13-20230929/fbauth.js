@@ -24,12 +24,9 @@ function registerpage(){
    var user_name=document.getElementById('name').value;
    var user_email=document.getElementById('email').value;
    var user_password=document.getElementById('password').value;
-   auth.createUserWithEmailAndPassword(user_name,user_email,user_password).then((result)=>{
+   auth.createUserWithEmailAndPassword(user_email,user_password).then((result)=>{
     alert("register sucess")
     console.log(result)
-   })
-   .catch((error)=>{
-    console.log(error.code)
    })
  }
 //   }
@@ -39,6 +36,7 @@ function loginForm(){
   let user_password=document.getElementById('password').value;
   auth.signInWithEmailAndPassword(user_email,user_password).then((result) =>{
     alert("login successfully")
+    window.location="fbauth_home.html";
     })
     .catch((error)=> {
       console.log(error);
