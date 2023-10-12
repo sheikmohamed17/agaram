@@ -1,0 +1,54 @@
+
+            body{
+                margin:0px;
+                
+            }
+            #basics{
+                margin-left: 72%;
+            }
+            #objective{
+                margin-left: 6%;
+            }
+            h4{
+                background-color: lightblue;
+            }
+            #personal{
+                margin-left: 4%;
+            }
+            strong{
+                background-color: aqua;
+            }
+            #left{
+                display:inline-block;
+                width: 34%;
+                vertical-align: top;
+                background-color: aquamarine;
+                line-height: 2;
+
+            }
+            #right{
+            
+                display: inline-block;
+                width: 65%;
+                background-color: rgb(170, 178, 214);
+            }
+            #left img{
+                border-radius: 125px;
+                /* display: block; */
+                margin-top: 1px;
+                align-items: center;
+            }
+            #n{
+                background-color: rgb(6, 171, 183);
+                border-radius: 37px;
+                text-align: center;
+            }
+            #mail{
+                display: inline-block;
+            }
+            #profile{
+                height: 42%;
+                width: 98%;
+                display: block;
+            }
+        

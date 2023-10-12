@@ -1,98 +1,102 @@
 let resumeDetails={};
-let ele_temp={}
-function a(ele,detail)
+let emp_temp={};
+
+function a(ele,p_key)
 {
-    if(detail)
+    console.log(ele,p_key)
+    if(p_key)
     {
-        if(resumeDetails[detail])
+        if(resumeDetails[p_key])
         {
-            resumeDetails[detail]={...resumeDetails[detail]}
-        }   
-        else{
-            resumeDetails[detail]={}
+            resumeDetails[p_key]={...resumeDetails[p_key]}
         }
-        resumeDetails[detail][ele.name]=ele.value
+        else
+        {
+            resumeDetails[p_key]={};
+        }
+        resumeDetails[p_key][ele.name]=ele.value;
+        disp()
     }
     else{
-        resumeDetails[ele.name]=ele.value
+    resumeDetails[ele.name]=ele.value;
     }
-    // console.log(resumeDetails)
-    display()
+    console.log(resumeDetails)
+    disp()
 }
-function handlewithmuldata(p_key,ele_id){
-   if(!resumeDetails[p_key])
-   {
-    resumeDetails[p_key]=[]
-   }
-   if(ele_id)
-   {
-   resumeDetails[p_key].push(document.getElementById(ele_id).value);
-   document.getElementById(ele_id).value='';
-   }
-   else
-   {
-    resumeDetails[p_key].push(ele_temp)
-    ele_temp={}
-   }
-   console.log(resumeDetails[p_key])
-   let skil=''
-   for(let i=0;i<resumeDetails[p_key].length;i++)
-   {
-    let skils =resumeDetails[p_key][i]
-    skil=skil+`<h5>${skils}<input type='button' value='x' onclick="deletedskil('${p_key}')"></h5>`
-    }
-    console.log(skil)
-   document.getElementById('showskills').innerHTML=skil
-   display()
-}
-function language(p_key,ele_id){
-    console.log(p_key)
-    console.log(ele_id)
-    let ele = document.getElementById(ele_id).value;
-
-    console.log('ele',ele);
-
-    if(!resumeDetails[p_key])
+function handlewithmuldata(obj_id,ele_id,t_id)
+{
+    if(!resumeDetails[obj_id])
     {
-        resumeDetails[p_key]=[]
+        resumeDetails[obj_id]=[];
     }
-    
-    resumeDetails[p_key].push(document.getElementById(ele_id).value)
-     document.getElementById(ele_id).value=""
-    let lang=''
-    for(let i=0;i<resumeDetails[p_key].length;i++)
+    if(ele_id)
     {
-   lang=lang+`<h5>${resumeDetails[p_key][i]}</h5>`
+        resumeDetails[obj_id].push(document.getElementById(ele_id).value);
+        document.getElementById(ele_id).value=''
+        showarry(obj_id,t_id)
+
     }
-    document.getElementById('showlang').innerHTML=lang
-    display()
-}
-function deletedskil(a){
-    for(let i=0;i<resumeDetails['skills'].length;i++){
-        console.log(a[i])
-        if(resumeDetails['skills'][i]=a[i]){
-            
-        }
+    else{
+        resumeDetails[obj_id].push(emp_temp)
+        console.log(emp_temp);
+        showobjed(obj_id,t_id)
+        // document.getElementById(obj_id).value=''
+
+        emp_temp={}
     }
-
+    console.log(resumeDetails)
+    disp()
 }
 
-function handlewithmularray(ele){
-ele_temp[ele.name]=ele.value;
-
+function handlewithmularray(ele)
+{
+emp_temp[ele.name]=ele.value;
 }
 
-// function handlewithobj(p_key){
-//     if(!resumeDetails[p_key]){
-//         resumeDetails[p_key]=[]
-//     }
-//     resumeDetails[p_key].push(ele_temp);
-//     display()
-// }
 
-function display(){
-    document.getElementById('display_data').innerHTML=JSON.stringify(resumeDetails,undefined,2)
+function showarry(ob_id,tbl_id)
+{
+    let dispary='';
+    for(let i=0;i<resumeDetails[ob_id].length;i++)
+    {
+        
+        dispary=dispary+`<div id='${ob_id[i]}'>'${resumeDetails[ob_id][i]}'<button type="button" onclick="de('${ob_id}','${i}')" >x</button></div>`
+        console.log(dispary)
+    }
+    document.getElementById(tbl_id).innerHTML=dispary;
 }
+function showobjed(o_id,tbl_id){
+
+    let dispobj='';
+    for(let i=0;i<resumeDetails[o_id].length;i++)
+    {
+        
+      
+        let d1=resumeDetails[o_id][i].e_name;
+        let d2=resumeDetails[o_id][i].level;
+        let d3=resumeDetails[o_id][i].year;
+        let d4=resumeDetails[o_id][i].percent;
+        dispobj=dispobj+`<div id='${o_id[i]}'>'${d1}' '${d2}' '${d3}' '${d4}' <button onclick="de('${o_id}','${i}')">x</button>`
+        document.getElementById(tbl_id).innerHTML=dispobj
+    }
+}
+
+function de(o_id,id_nx)
+{
+    // console.log(v_id,inid)    
+    resumeDetails[o_id].splice(id_nx,1)
+   let  rem_data=document.getElementById(`${o_id[id_nx]}`)
+    rem_data.remove()
+    disp()
+    console.log(resumeDetails)
+}
+
+function disp()
+{
+    document.getElementById("display_data").innerHTML=JSON.stringify(resumeDetails,undefined,2)
+}
+
+// ----------------------AJAX--------------------------//
 function dataentry(){
     $.ajax({
         type:"POST",
@@ -105,7 +109,7 @@ function dataentry(){
         },
         success:function(a){
             console.log(a)
-            window.location='index.html';
+            window.location='h.html';
         },
         error:function(er){
             console.log(er)
@@ -134,6 +138,7 @@ function getdata(){
                 <td>${pdata.data[i].user}</td>
                 <td>${pdata.data[i].id}</td>
                 <td> <button onclick="del('${pdata.data[i].id}')">delete</button></td>
+                <td><a href="file:///home/sheik_mohamed/agaram/D15-20231005/resumebuilder/showresume.html?id=${pdata.data[i].id}">ReDirect</a>
                 </tr>`
             }
             document.getElementById('rdata').innerHTML=th
@@ -157,7 +162,7 @@ function del(i)
             id:i
         },
         success:function(a){
-            console.log(a)
+            // console.log(a)
            
             getdata()
         },
@@ -166,7 +171,7 @@ function del(i)
         }
     })
 }
-function getresume(){
+function getresume(i){
     $.ajax(
         {
             type:"GET",
@@ -174,10 +179,70 @@ function getresume(){
             data:{
                 request:"get_resume_by_id",
                 user:"sheikmohamed",
-                id:8220
+                id:i
             },
             success:function(a){
                 console.log("getresume",a)
+                let parsed_data=JSON.parse(a)
+                // console.log("parsed",parsed_data)
+                // console.log("parsed_data",parsed_data.data)
+                let parsed_data_data=parsed_data.data.data
+                // console.log("parsed_data_data",parsed_data_data)
+                let p=JSON.parse(parsed_data_data)
+                // console.log("name:",p.name)
+                // let d=document.getElementById("n")
+                // console.log(d)
+                document.getElementById("n").innerHTML=p.name;
+                document.getElementById("nc").innerHTML=p.name;
+                document.getElementById("mailid").innerHTML=p.email;
+                document.getElementById("cell").innerHTML=p.mobile;
+                $('#objective').html(p.objective);
+                $('#n2').html(p.name);
+                $('#edu').html(p.degree);
+                // $('#fthr_name').html(p.)
+                $('#fthr_name').html(p.personal_detailes.father_name)
+                $('#g').html(p.personal_detailes.gender)
+                $('#nat').html(p.personal_detailes.nationa)
+                $('#hb').html(p.hobbies)
+                $('#dclr').html(p.decelartion)
+                $('#mail_id').html(p.email)
+                $('#phone').html(p.mobile)
+                // console.log(p.p)
+                // console.log("sk",p.skills[0])
+                let sk='';
+                 for(let i=0;i<p.skills.length;i++)
+                 {
+                    
+                    sk=sk+`<li>${p.skills[i]}</li></ul>`
+                    
+                 }
+                //  console.log("s",sk)
+                $('#skill_list').html(sk)
+                 console.log("ed",p.education.e_name)
+                let ed=''
+                for(let i=0;i<p.education.length;i++)
+                {
+                    // console.log(p.education[i].ins_name)
+                    ed=ed+`</b><li>Edcuation Level:<b>${p.education[i].level}</b><br>
+                    Institute Name:<b>${p.education[i].e_name}</b><br>
+                    Percentage:<b>${p.education[i].percent}</b><br>
+                    Passed Out year:<b>${p.education[i].year}</b>
+                    </li>`
+                }
+
+                 $('#ed_list').html(ed)
+                // $('#').html(p.);
+
+                // document.getElementById("objective").innerHTML=p.
+
+                let lang=""
+                for(let i=0;i<p.languages_known.length;i++)
+                {
+                    lang=lang+`${p.languages_known[i]} `
+                    // console.log(p.languages_known[i])
+                }
+                $('#k_lang').html(lang)
+                
             },
             error:function(err){
                 console.log('grError',err)
@@ -194,32 +259,39 @@ function showtable(){
 
 
 
+ var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return false;
+};
+
+function download() {
+    alert('ok')
+const page = document.getElementById('temp_for_resume');
+var opt = {
+margin:
+1,
+filename: 'Demopdf.pdf',
+image:
+{ type: 'jpeg', quality: 0.98 },
+html2canvas:
+{ scale: 1 },
+jsPDF:
+{ unit: 'in', format: 'letter', orientation: 'portrait' }
+};
+// Choose the element that our invoice is rendered in.
+html2pdf().set(opt). from (page).save();
+}
 
 
-
-
-// $.ajax(
-//     {
-//         type:"GET",
-//         url:'https://jsonplaceholder.typicode.com/posts/',
-//         data:{},
-//         success:function(d){
-//             console.log('s',d);
-//             console.log('length',d.length);
-//              let hdata='';
-//             for(let i=0;i<d.length;i++)
-//             {
-//                 // console.log(`${data[i].id}`)
-//                 hdata=hdata+`<tr>
-//                 <td>${d[i].userId}</td>
-//                 <td>${d[i].id}</td>
-//                 <td><button type="button" onclick="showid('${d[i].id}')">${d[i].title}</td></button>`
-                               
-//             }
-//              document.getElementById('tbody_data').innerHTML=hdata
-//         },
-//         error:function(err){
-//             console.log("e",err)
-//         }
-//     }
-// )
+// $('#').html(p.);

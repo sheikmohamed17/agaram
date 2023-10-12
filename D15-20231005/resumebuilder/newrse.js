@@ -399,59 +399,59 @@ let ele_temp={}
 //     }
 //     document.getElementById(ti).innerHTML=data
 //     console.log(data)
+// // }
+// function savedata(e,o){
+//     if(o)
+//     {
+//         if(resumeDetails[o]){
+//             resumeDetails[o]={...resumeDetails}
+//         }
+//         resumeDetails[o]=[]
+//     }
+//     resumeDetails[e.name]=e.value
+//     console.log(resumeDetails)
 // }
-function savedata(e,o){
-    if(o)
-    {
-        if(resumeDetails[o]){
-            resumeDetails[o]={...resumeDetails}
-        }
-        resumeDetails[o]=[]
-    }
-    resumeDetails[e.name]=e.value
-    console.log(resumeDetails)
-}
-function hwmd(oi,ei,t){
-    if(!resumeDetails[oi]){
-        resumeDetails[oi]=[]
-    }
-    if(ei)
-    {
-        resumeDetails[oi].push(document.getElementById(ei).value)
-        document.getElementById(ei).value=''
-        showsk(oi,t)
-    }
-    else{
-        resumeDetails[oi].push(ele_temp)
-        ele_temp={}
-    }
-    console.log(resumeDetails)
-    disp()
-}
-function showsk(oid,ti){
-    console.log(oid,ti)
-    let d=''
-    for(i=0;i<resumeDetails[oid].length;i++)
-    {
-        a=resumeDetails[i]
-        d=d+`<div id='${oid[i]}'>${a}<button onclick=del('${oid}','${i}')>x`
-    }
-    document.getElementById(ti).innerHTML=d
+// function hwmd(oi,ei,t){
+//     if(!resumeDetails[oi]){
+//         resumeDetails[oi]=[]
+//     }
+//     if(ei)
+//     {
+//         resumeDetails[oi].push(document.getElementById(ei).value)
+//         document.getElementById(ei).value=''
+//         showsk(oi,t)
+//     }
+//     else{
+//         resumeDetails[oi].push(ele_temp)
+//         ele_temp={}
+//     }
+//     console.log(resumeDetails)
+//     disp()
+// }
+// function showsk(oid,ti){
+//     console.log(oid,ti)
+//     let d=''
+//     for(i=0;i<resumeDetails[oid].length;i++)
+//     {
+//         a=resumeDetails[i]
+//         d=d+`<div id='${oid[i]}'>${a}<button onclick=del('${oid}','${i}')>x`
+//     }
+//     document.getElementById(ti).innerHTML=d
 
-}
-function del(oi,i){
-    console.log(oi,i)
-    resumeDetails[oi].splice(i,1)
-    // a.splice(i,1)
-    console.log(resumeDetails[oi][i])
-}
-function hwmv(e){
-    ele_temp[e.name]=e.value
-    console.log(ele_temp)
-}
-function disp(){
-    document.getElementById('showresume').innerHTML=JSON.stringify(resumeDetails,undefined,2)
-}
+// }
+// function del(oi,i){
+//     console.log('g',oi,i)
+//     resumeDetails[oi].splice(i,1)
+//     // a.splice(i,1)
+//     console.log(resumeDetails[oi][i])
+// }
+// function hwmv(e){
+//     ele_temp[e.name]=e.value
+//     console.log(ele_temp)
+// }
+// function disp(){
+//     document.getElementById('showresume').innerHTML=JSON.stringify(resumeDetails,undefined,2)
+// }
 // function del(id,i)
 //       ht=ht+`<h6><div id= '${pid[i]}'>${a}<button onclick="del('${pid}','${i}')">x</button></h6>`
 // {
@@ -526,11 +526,11 @@ function disp(){
 //   ele_temp[ele_id.name]=ele_id.value 
 //   console.log(ele_temp)
 // }
-// // function hwmv(oi)
-// // {
-// //     ele_temp[oi.id]=oi.value
-// //     console.log(ele_temp)
-// // }
+// function hwmv(oi)
+// {
+//     ele_temp[oi.id]=oi.value
+//     console.log(ele_temp)
+// }
 // function showsk(o,t){
 // console.log(o,t)
 // ht=''
@@ -577,3 +577,90 @@ function disp(){
 //     // document.getElementById(a).style.display='null';
 //     disp()
 // }
+// -------------------------------------------------------------------
+let resumedata=[];
+let emp_temp={};
+function savedata(ele,ob){
+console.log(ele,ob);
+  if(ob)
+  {
+    if(resumedata[ob]){
+      resumedata[ob]={...resumedata};
+    }
+    resumedata[ob]=[];
+  }
+  resumedata[ele.name]=ele.value;
+  console.log(resumedata);
+  
+}
+function hwmd(oid,eid,tid)
+{
+  // console.log(tid);
+  if(!resumedata[oid])
+    {
+      resumedata[oid]=[];
+    }
+  if(eid)
+  {
+   resumedata[oid].push(document.getElementById(eid).value); 
+  console.log(resumedata);
+    showsk(oid,tid)
+    disp()
+  }
+  else{
+    resumedata[oid].push(emp_temp);
+    console.log(emp_temp);
+    emp_temp={}
+    showob(oid,tid)
+    console.log(resumedata)
+    disp()
+  }
+  disp()
+}
+
+function hwmv(ele)
+{
+  emp_temp[ele.name]=ele.value;
+}
+function disp()
+{
+  document.getElementById('display').innerHTML=JSON.stringify(resumedata,undefined,1);
+}
+function showsk(o_id,t_id)
+{
+  console.log("h",o_id)
+  let hdata='';
+  for(let i=0;i<resumedata[o_id].length;i++)
+    {
+      a=resumedata[o_id][i];
+      console.log(a)
+      console.log('a',resumedata[o_id][i]);
+      hdata=hdata+`<div id='${o_id[i]}'>${a}<button onclick="del('${o_id}','${i}')">x</button></div>`
+    }
+  document.getElementById(t_id).innerHTML=hdata;
+}
+function showob(ob_id,tl_id)
+{
+  let showobj='';
+  console.log(ob_id)
+  a=resumedata[ob_id];
+  console.log('k',a);
+  for(let i=0;i<a.length;i++)
+  {
+    console.log('l',a[i]);
+    for(keys in a[i])
+      {
+        // console.log(keys,a[i])
+        showobj=showobj+`<div id="${ob_id[i]}">'${keys}''${a[i][keys]}<button onclick="del('${ob_id}','${i}')">x</button></div>`
+      }
+  }
+  document.getElementById(tl_id).innerHTML=showobj;
+}
+
+function del(ob,i)
+{
+  resumedata[ob].splice(i,1);
+  console.log(resumedata);
+  let a=document.getElementById(`${ob[i]}`);
+ a.remove() 
+}
