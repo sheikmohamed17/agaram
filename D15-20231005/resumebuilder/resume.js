@@ -40,8 +40,12 @@ function handlewithmuldata(obj_id,ele_id,t_id)
         resumeDetails[obj_id].push(emp_temp)
         console.log(emp_temp);
         showobjed(obj_id,t_id)
-        // document.getElementById(obj_id).value=''
-
+        //  document.getElementById(obj_id).value=''
+         let keys=Object.keys(emp_temp)
+    for(let i=0;i<keys.length;i++)
+    {
+       document.getElementsByName(keys[i]).value=''
+    }
         emp_temp={}
     }
     console.log(resumeDetails)
@@ -73,22 +77,37 @@ function showobjed(o_id,tbl_id){
         
       
         let d1=resumeDetails[o_id][i].e_name;
+        console.log(d1)
         let d2=resumeDetails[o_id][i].level;
         let d3=resumeDetails[o_id][i].year;
         let d4=resumeDetails[o_id][i].percent;
-        dispobj=dispobj+`<div id='${o_id[i]}'>'${d1}' '${d2}' '${d3}' '${d4}' <button onclick="de('${o_id}','${i}')">x</button>`
+        // dispobj=dispobj+`<div id='${o_id[i]}'>'${d1}' '${d2}' '${d3}' '${d4}' <button onclick="de('${o_id}','${i}')">x</button>`
+        dispobj=dispobj+`<tr id='${o_id[i]}'><td>${d1}</td><td>${d2}</td><td>${d3}</td><td>${d4}</td><td><button type="button" onclick="de('${o_id}','${i}')">delete</button></td>`
         document.getElementById(tbl_id).innerHTML=dispobj
     }
 }
 
 function de(o_id,id_nx)
 {
-    // console.log(v_id,inid)    
-    resumeDetails[o_id].splice(id_nx,1)
-   let  rem_data=document.getElementById(`${o_id[id_nx]}`)
-    rem_data.remove()
-    disp()
-    console.log(resumeDetails)
+   
+let after_del_data=[]
+for(let i=0;i<resumeDetails[o_id].length;i++)
+{
+
+    if(i!=id_nx)
+    {
+        after_del_data.push(resumeDetails[o_id][i])
+    }
+}
+// console.log(after_del_data)
+resumeDetails[o_id]=after_del_data
+console.log('d',resumeDetails[o_id])
+    a=document.getElementById(`${o_id[id_nx]}`)
+    // console.log(a)
+    a.remove()
+     disp()
+    // showobjed(resumeDetails[o_id],o_id)
+
 }
 
 function disp()
@@ -229,8 +248,20 @@ function getresume(i){
                     Passed Out year:<b>${p.education[i].year}</b>
                     </li>`
                 }
+                $('#ed_list').html(ed)
 
-                 $('#ed_list').html(ed)
+                let exp=''
+                for(let i=0;i<p.experience.length;i++)
+                {
+                    // console.log(p.education[i].ins_name)
+                    exp=exp+`</b><li>Job position:<b>${p.experience[i].level}</b><br>
+                    company name:<b>${p.experience[i].e_name}</b><br>
+                    no of projects:<b>${p.experience[i].percent}</b><br>
+                    year of experience:<b>${p.experience[i].year}</b>
+                    </li>`
+                }
+
+                 $('#exp_list').html(exp)
                 // $('#').html(p.);
 
                 // document.getElementById("objective").innerHTML=p.

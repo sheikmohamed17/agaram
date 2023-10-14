@@ -15,7 +15,9 @@
         <button onclick="showtable()">Table</button>
     <div class="row">
         <form>
-    <div>
+    <div id="top">
+      <div id="top_left">
+      <h3>About</h3>
         <div  class="about">
         <label for="exampleFormControlInput1" class="form-label">Name</label>
         <input type="text" id="name" class="form-control"name="name" onkeyup="a(this)">
@@ -32,7 +34,7 @@
         <label for="exampleFormControlInput1" class="form-label" >Mobile</label>
         <input type="tel" id="mobile" class="form-control" name="mobile" onkeyup="a(this)">
       </div>
-    </div>
+    <!-- </div> -->
     <div >
       <label for="exampleFormControlInput1" class="form-label" ">Hobbies</label>
       <input type="text" id="hobbies" class="form-control" name="hobbies" onkeyup="a(this)">
@@ -40,6 +42,7 @@
       <div id="obj" >
         <label for="exampleFormControlInput1" class="form-label" >objective</label>
         <textarea type="textbox" id="objective" class="form-control" rows="4" name="objective" onkeyup="a(this)"></textarea>
+      </div>
       </div>
       <div id="personal">
         <h3>Personal Details</h3>
@@ -62,6 +65,7 @@
           <div >
             <label for="exampleFormControlInput1" class="form-label" >Nationality</label>
             <input type="text" id="nation" class="form-control" name="nation" onkeyup="a(this,'personal_detailes')">
+          </div>
           </div>
       </div>
       <div id="skills">
@@ -117,16 +121,27 @@
           <button type="button" class="btn btn-success" onclick="handlewithmuldata('education',null,'edu_detail')">ADD</button>
         </div>
       </div>
-      <div class="row">
-        <div class="alert alert-warning">
-            <code><pre id="edu_detail"></pre></code>
-        </div>
-      </div>  
+     <div>
+      <table class="table table-dark">
+        <thead>
+          <tr>
+          <th>Institute Name</th>
+          <th>Institute Level</th>
+          <th>Passed Out year</th>
+          <th>Percentege</th>
+          <th>Option</th>
+          </tr>
+        </thead>
+        <tbody id="edu_detail">
+
+        </tbody>
+      </table>
+     </div>
     </div>
        <h3>Experience</h3>
       <div class="mb-3 row">
         <div class="col-2">
-          <input type="text" name="company_name" class="form-control" placeholder="company_name " onkeyup="handlewithmularray(this)">
+          <input type="text" name="e_name" class="form-control" placeholder="company_name " onkeyup="handlewithmularray(this)">
         </div>
         <div class="col-2">
           <input type="text" name="level" class="form-control" placeholder="position" onkeyup="handlewithmularray(this)">
@@ -140,11 +155,53 @@
         <div class="col-3">
           <button type="button" class="btn btn-success" onclick="handlewithmuldata('experience',null,'exp_detail')">ADD</button>
         </div>
-        <div class="row">
-          <div class="alert alert-warning">
-              <code><pre id="exp_detail"></pre></code>
-          </div>
-      </div>
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th>Company Name</th>
+              <th>Position</th>
+              <th>Experience in years</th>
+              <th>No of Projects finished</th>
+              <th>Delete</th>
+            </tr>
+            <tbody id="exp_detail">
+
+            </tbody>
+          </thead>
+        </table>
+        </div>
+        <h3>Project</h3>
+      <div class="mb-3 row">
+        <div class="col-2">
+          <input type="text" name="name" class="form-control" placeholder="company_name " onkeyup="handlewithmularray(this)">
+        </div>
+        <div class="col-2">
+          <input type="text" name="level" class="form-control" placeholder="position" onkeyup="handlewithmularray(this)">
+        </div>
+        <div class="col-2">
+          <input type="number" name="year" class="form-control" placeholder="Year of experience" onkeyup="handlewithmularray(this)">
+        </div>
+        <div class="col-2">
+          <input type="number" name="percent" class="form-control" placeholder="no of projects" onkeyup="handlewithmularray(this)">
+        </div> 
+        <div class="col-3">
+          <button type="button" class="btn btn-success" onclick="handlewithmuldata('project',null,'proj_detail')">ADD</button>
+        </div>
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th>Project Name</th>
+              <th>Purpouse Of Project</th>
+              <th>Project Year</th>
+              <th>Description</th>
+              <th>Delete</th>
+            </tr>
+            <tbody id="proj_detail">
+
+            </tbody>
+          </thead>
+        </table>
+        
       <div id="dec" >
         <label for="exampleFormControlInput1" class="form-label" >Decelartion</label>
         <textarea type="textbox" id="decelartion" class="form-control" rows="4" name="decelartion" onkeyup="a(this)"></textarea>

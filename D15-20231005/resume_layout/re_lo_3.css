@@ -1,0 +1,36 @@
+#content{
+    display: flex;
+    position: relative;
+}
+#left{
+    border: 1px solid red;
+    background-color:black;
+    color: white;
+    width: 30%;
+    height: 900px;
+}
+#right{
+    border:1px solid black;
+    width: 69%;
+    height: 900px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+#about{
+
+    position: absolute;
+    top: 10%;
+    color: aliceblue;
+    background-color: blue;
+    width: 87%;
+
+}
+img{
+    padding:0% 7%;
+    /* border-radius: 4%; */
+}
+#name{
+    text-align:right;
+}

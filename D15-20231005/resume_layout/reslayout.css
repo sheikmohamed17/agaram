@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#left{
+width: 30%;
+background-color: #86ABCF;
+border: 9 solid red;
+height: 900px;
+color: azure;
+padding-left: 50px;
+}
+#im{
+    text-align: center;
+    padding: 8px;
+}
+#right{
+width: 70%;
+background-color: azure;
+height: 800px;
+}
+#detail{
+    display: flex;
+}
+/* #con_data{
+    /* margin-left: 50px; */
+/* } */ 
+#cont{
+    /* margin-left: 50px; */
+    
+    border-bottom: 1px solid white;
+}
+#detail{
+    padding:0% 10%;
+}

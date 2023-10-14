@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#resume{
+    background-color: #C8A8E9;
+    color: white;
+    padding-top: 20%;
+}
+#top
+{
+    text-align: left;
+    width: 30%;
+}
+#left{
+    border: 1px solid #C8A8E9;
+    width: 30%;
+    background-color: #C8A8E9; 
+    color: whitesmoke;
+    
+}
+ #content{
+    display: flex;
+}
+#left_con
+{
+    padding-left: 8%;
+}
+#prof{
+    border-bottom:1px solid white ;
+}
+#pa{
+    padding: 5% 0%;
+}
+#right{
+    width:69%;
+    /* border: 1px solid red; */
+    padding-left: 2%;
+}
+#jb_exp{
+    border-bottom: 5px solid #C8A8E9;
+}
+#ex_shw{
+    display: flex;
+    padding: 3%;
+}
+#ex_yer{
+    width: 30%;
+}
+#ex_detail{
+    width: 70%;
+}
