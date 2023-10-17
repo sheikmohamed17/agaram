@@ -1,8 +1,63 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+#pin_code,#area,#city,#password,#aadhar_no,#mail,#name,#address,#cell{
+    background: none;
+    color: white;
 }
 #Register{
-    align-items: center;
- }
- 
+    width:400px;
+    border-radius: 20px; 
+    position: absolute;
+    left: 35%;
+    font-weight: bolder;
+    color: white;
+    /* opacity: 0.6; */
+    margin-top: 2%;
+    /* background-color:black; */
+    }
+   
+        
+     
+#r_top{
+    position: relative;
+    height: 100vh;
+    background-image: url(../images/sample_reg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    
+#login{
+    width:20%;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    color: white;
+    transform: translate(-50% -50%);
+    font-weight:bolder;
+    font-size: medium;
+    
+}
+label{
+    text-align: left;
+}
+#parent{
+    position: relative;
+    opacity: 1;
+    /* margin-top:10%; */
+    background-image: url(../images/samp_2_pen.jpeg);
+    background-size:cover ;
+    height: 100vh;
+    color: white;
+    }
+#loged{
+    /* text-align: right; */
+    position: fixed;
+    top: 5%;
+    right: 2%;
+    font-size: x-large;
+    color: white;
+}

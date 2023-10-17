@@ -1,42 +1,26 @@
 <html>
     <head>
         <title>resume_data</title>
-        <link rel="stylesheet" href="previousresume.css">
+        <link rel="stylesheet" href="res_lay_5css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     </head>
     <body>
-        <h3>Resume Details</h3>
 <div id="temp_for_resume">
 <h3><center>Resume</center></h3>
-        <div id="left">
-            <img src="https://img.freepik.com/premium-photo/confident-businessman-portrait_220507-11268.jpg?size=626&ext=jpg&ga=GA1.1.1919597821.1695706410&semt=ais" id="profile">
-              <center><b> <b id="n"></b></b></center>
-                <center><label id="h">FullStack Developer</label></center>
-               <br><label><b>Education:   </b><b id="edu"></b></label><br>
+
+                
+            
+         <div id ="right">
+              <center><b> <b id="n">N</b></b></center>
+                <center><label id="h">l</label></center>
+                <div id="top">
+               <br><label><b>Degree:   </b><b id="edu"></b></label><br>
+               <label><b>Git-Hub Link</b><a href="#"></a></label><br>
                 <label><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEX///8AAADl5eXk5OTm5ubj4+P19fXu7u74+Pj39/fw8PDt7e3r6+v29vb6+vrv7+/5+fns7Ow/Pz+Tk5Oenp7V1dXNzc2Dg4O6urqLi4uWlpbW1tYRERHPz8/Hx8dtbW0nJyd1dXUuLi4ZGRlcXFw4ODhKSkogICC2trarq6sNDQ19fX1FRUViYmJVVVUYGBgldVGJAAARDElEQVR4nO2deV/bOBCGVVvxId9ACxQoLdtzaen3/3br25rRSJavxCzJH+tf3lVFJpJnHr+WHMYYCx3uhOXR5Y5fHnyHu+UhaNXyEGnVbFATRc1blXOn0KpiUD1FTXuVxzPV6j9vIMLAddygitBpY3EOrRqOqVmj5q3qOG0svZoA1VVV0ahpq3LHiaHqzVTdVmVhGHiRH3lBGES+L8qD8P0oCGap/jw1XENNNGr5Vbr1ELnNEB2cQzWcB0UNFTVv1fLLqodoRK2HCKrpoRtOt/3azWozRBNUt1I5efK5liefquY2p6TY+JR0ZfW4Y+icYAyr87CcuvjcGlR/TTXUqOEEVddDRKlJ9AZyKXsT9fDgNiefe6hjKY9aNS8PYaMWWjVr1LRVXddFatKosVYVg1p9ameCypFadVkFELkorDanoAA0aqGqy8JKFoYlq/urFunq1aKN0D69+DC9qElnNL2MJp256YVSy6QqSpYSkYRUQVk4lqp0vzPVUKcmverr1CbTzCrzVsV/FNVGi7+nVU1lflCrCN9CtdhsDMdxe/0xRCobIMcPWkwKZfSZpIanUjO9eoRcOgfglqKarO6vHq599eQ2UBYtRjWkHpdpjKSjQ7VRgDOg2qAmioqDdcmwXDIAl0Q1s8rg1NykWjgrVAtn4tTc3mubg2rrXh92KqsxKWrwK2qBKIqOoPoWaqKq4VT1eD7NOMAt8Wlcvfr/rxYbjKG7G6/Nabw2AETlWwLKWpVuewQ1W6BulUutAW6FXEqh2tlrmw9wMqrNAbjVUG3w2iZlGpfMNC5ZLRQ1UdS0VR2c6zWqp1WVavGqvTZHWxe299qsUe2oXpuEVHkPTzkJWkdSW/zKSYCr1ZxSsxwDXK2exms7rOTTGFDt7LXNGEMDqmlx2wrgVvHaFPQJj6uS+DVXTZB6Mq/NDHBLUe3stc1CtX17bZMyjfvKMg2cmgsm7HKvzQhw5CS0Abg6wkXXhx1+vQKvrYanPMhL9CnyCSrZA4ayMTWZoTaoNqae2ms70CefwaexQrWz16YbQ9sEukOvLWuQKmvRJ/NXVbM11WRczYC6PJcu99oO1rnUHtXOXpsNwFGo9hq8tnbCHhSVyDQumVO0KpFpXDKn0OrsTLO/aqHx2kZQTQ9w864PXVXdtdfWQ1leI1V5LFS1nLye51UhBeWx6qc8pGxFNW9UZqO2uJgUzecdUE1Rq39rh2rF7fPl5eXt9fX1bXksD9ft263UW4N6y6ScspbX5n17t5/XN8amVQubMRQXpw5Lel0w67TKOsjJEH4pKttXhDSqZao6IZfuKsJ0C69tXxFu4bXtK8JpXpsVqnm7ipCBqdnBnkeoDE5Nw4TdYYRWACePoRnVdhihrdeWe0VUEKiG1FyJ8Obu/cOHDx/el6/h8FAerNSHCerdlRJhXjtwParledJ+XqxO8GnUMTzEaZOxsupLK4/Vl1Ye8ulqdXp4jVq9DYCafVDGMN3CayNm6V3KjuC1+TfqLJ1QLSzHUFPxC7a911aoAapjaAC4JAm9km68MGlQLWlQbVCzVk2pCO8dQbWle6iQarqafiL+7kX1ue16WJpL/z1Up876Xltf4wrlHGwiZGZUm+O1aarF/YFt6LW5ETWCfT1cy2vDV0/3X8Ff8zb02mI6wCZCa69t+rVF8h1MVIcb7uNjr82gqtNNvAdx3d73EW58bVEIEOLfusat57X1ub6AI/jMhjFMzagmq2NjOLhqQ4Qx90GIP5oI1/bacICekCOc4LUVIs9zUTJPeWhQLS9RTVGlCEsiYr9BiF6Ke4D9JrZqMKgezKLPaeQNETLYtkY1pYdomtcm+TTV157BEDlfvK4N7QqK79AULWu3FCEzo9osr22IMK3UCFSPzzVgrlgtUJl4TIkIl3ttrn4MXYdnMMSAGsPZq01QmXgUMRHhBK+thpwsTJIafQAQ9ap8HopKTWCI3zyRJWQPM9QcTtEvrFKFfB5a9zurHsa8HiJePIEQC4fMmvYA16MaOgcfG9WRc+m29TDu1Bj44N9its7VUwwL/aNoTjMOqsVir801eG1xpzoChsjmoRpa18ZxgG1bV45wltfm9hOWuHkm59JBFTGcqHEHcAvWRImDMkXbSahkGiufBk5NO69NmoQ8/gxCjHx1alqta+snFnEOdlCmVIv5Xpv1GJafGob421s4hjhAIY3LvDEcQCslUE0COMlrC2Ss870fIESWYigrJgCcgAH+SZu2RVFCWSpXi15VUA2ps7y2GKxg4/wvCLGgfRoTwPWgxTkMkIGCDqvFll5bjLDO/Uf+WN8z/fqFkWqBysTXnMlQNrNaKGNI3cJAXls/hu1ocQdM1BdGjaENqqEABRwXxzCGRq8NQE75lkCfSpW8tiREbQMHTNSXXAE4fb8SqsEy8YeFsG0on4dJzWhqvwlW5Vx6sPXa5FzaDBE/wBAzOpeaUQ0G+KLmR00u3cBrS9XFQ/jj+eppNnJKojLxNVJPswVXTxSq6b22d4xY18b5v+ADsokAx9FXJAgoQxFaem19Lm3LPIfXFnxQlVzatnWath4aAwEGrmwLJixQK1TLwL/+I023IT8SubTsgSrz7XAuv7YA69rQRP3qjVcLt1OJc1B14KhqMclro1BN57XJbZ0u6cSYR5glwCkBCnIxrTPPayuKFp6KIq1QrWgAblDzVgVeW6+CtgKn+76HhOy3U9G/e8lrtcevri302ooGygrctlRDSU2bTDPda2sLOtqYwNEoeuOoVqrS7OumKL2B+8heG7kKGl8ZeBbVAk9RiGrrVAt6tcmI10ZvTIixhUSNIQA4fgfKzIuQOQDu7JrvtanoQ6jQa9O2xS5ZamhbqQGsoy89qin4ZfDa1LaDusRrozcmxA8wREHl0h7VECj8JvJj35Yi7629NnKdd4FDpE6+DtUOIMDvBTNsTJjttZmeQTvitdEbE9BF0BdmQDU4goXhZukyr43Mpa6NEzW0lUxSD47is4dQrRvOLAGXzi/qwEFk0fk0sK1DOFELvDZ6z0wMb4xde2SEnIMAf6dTIzyO10bvIQ2+wBApgOP8Xm5zX6/B56aNCQu8tgZy4hKp0pKhiiJGAFepsteW9mrZFkFZpQbX7+DrliltBTSwKmc0rXvI1H6jRoVeW6dWbTGqSeoKXpvqqrHLd/h1K9ATeLj3D27zKDQOnNFro5/As7LXhlw1casEWIUIqwVXAiwnsyBvlq7rtRkATu+1wTEU6gjWITImoRr/QbW5Fkx14Fbx2kSDVKJFnxa0oCp7baa27CMZ4Lt3H9Osa5tkn+k2t2lG9SsE4bW1Kt22Vr0VvbahbYgXuw6vS9G25UITYFVY8EY9G6/NBHBVyxWvnriAAcLxvKy3c/HsAAK8QG30e0hX89pogBvx2hqAE7/Ax73x4NrQixu/BB6YiJ7QqovL6o/Su0UXem04lyqqTS79CT7sh7IRVNTXU/lPYYgfxZxcqsebNatFBkfsplJ9c4hPVQ9oFK+ES+4hPb3XJmAwP5ubpcYQn+o16w5a6HwlKPxa4rVJqBYXMQFwMfbaKjWp1HRANQ8FmLTw5OlDfBJR04MHR/EXyxWAq/7aECFr1LD9DBFoC9Qm06zhtaGz6Wa4LYrSjxRg2oMCg6P4M3NneG0kwK1WLdCWgV9MWqmgCfFJDKdOjibzz+wIXps7xWuL0JmUMWldG71a+49ff0fdd+3Dr+FnxFby2kT5qlkH4ZeiEl5bh0lCoCl6xRLYb84fcYA3DPSQeAzV0mDoocYvAb22Th16gG07dR2vzYPOzBVTVnQ74u5ZanHxK2bDEpO2bYpCjOZ4baq6Rj1EeyIuGSOuqThjDx8fv19cvFz/PIjYYaoDh5DvU3QEr82lvTYHoBpyZW4z/W1RP6v/J3oyW7+uTUCO/SRAW4PXZvq9pxVyKXS5L4k7FJy8b8GJNcIwxLu4H4xiZi51GDPD6LjXhu5U3DLFVUPr2lzTujYPYvlDvJrXNvpgD931IV5wbn1blF7X5qAQ38creG1pjWopQjVFlby2PO1VgQPMhh6StgeAX6NqikLMh7bIa4M9hG0PEVIXem0pXIf2LDlws592zZ5Bn3fxHK9t1tOuqVXQDvgwX6REsmAVtPcFhXgErw1X/HZclLWgbJ09pAKFyNkSr83zEk9UkOO18NQREFah11apKbz398hAD2S/9F/z0F9LGAzR9doOhwirz23oQVIZGLhJXptIgOf5p1FnbMnrQKtV6yINQrw/GO89jT9TYV7FR0suqwBX3BUk/sid/z2cwGtDtvxLFDCMakv2kLoZCPGfesvEXK+t3tfvczRwneoQubQo1Rx4ni+1U9+1baGsWczPIWM3qEarTq9WHxXsxf1cPY4A5lKHHDhVnVcteIoDJFAtUlXdujbqtqh4ASEWx/Xa4EaS3wlbtIdUc1sU7sUtQ5zrtcU1fpXMk6YSqslqjVTyNT68sfI7wG0lKNOq+bgawBB9uVo0bUOyBwng/HleG3y8wsUiVDMDHNioehHKf3NLr+0v+Gq/SellvWrRnlAF2Dn2/R5GuJ3XBgLkbAzV5uwhbVUnpp+DN9lr61jHq9EHAlGn0k/C+paEAMqoHpaoYUCGeMGse1j4vLYf4XAxPAHVlOeXYoCT8iN5u3hrr20I0NOefAuuntApyYkQt/bautf9IWXb/zYCAuA2wlleG4Vqg6o+veVHzkQcNw98iutHRsVxXF2teGNqrqjMpAZKiCCXchLgOpXBqTnpeW2f7t5/urm5qR7JVR4+lceb5u1U9WFEvVPuz23ttZ3+NcVr61EtbVAthaA1qMG+IkyrtXVx1n7eHtVq1ZfVRc9rO91ra6/t9K+tvbbTv6Z5bR3keC3zQPTpVfJ5bad6VV7byOft3jIwcK/z2ZcbeG2nf23jte3ped7VWrHpXpvDFIDLZID7dXV5efnx6urqY3ksD1fD4ejqr6RHNU6hmqxO+W2EemlUmZzKosrqt+3BTq0QtWjURFGFrRo16oRfTOB4G4l2H7AO6xxlY8JKXpsZyrpYRtUK5mvIiRuvLW5QDajJmJotUwughqqaW6i+Rm0yzfSfseouCqG6ttc2/0eA39zvkFp5bYPh0rpqtDrVa9voZ6yQ1zaOPq9YnfU7M3jgNvXaFqv7+62g9X+H1NZrM6iFqh73d0jHvDbePJsTem1I7QCuVNUboBrVAepwW1SjSivYZqg6gGNwao5PWJecmsbborbr2vQ3S6f9jBXltbVQhmMZBzjpMSwA4HpV/8iWfl1bD1oA4KyhbExlJ0O1eAzVbABOh2qSauW1SahGqCqqLVvXtjbA/f+rxZF+HfCEv0O6R9BaVWVg4MZRDf8koAJw66xrWxHgqgjfwNWTldc2BdUGVU6gM34bwYhq87y2FtW4gmq0OgpwwqTmnISyCWo6ptpWCxLVRgGOQDVnGqqtAnAar80EcBlUZ6Ca+sy9lVFN77WdBtWmqBKU0eoMr41EtbPXtrNqsZXX5o6g2tlrO4bXRqLa2Wvb2dXT1l6buyevDUKZHuASk7oawPGJqgpwjcrg1DQ8ke5/4rXNBLi9e237R7V4DNUMANf5NBHy2nSodvbadlgtjuS1jQHc2Wtb12szodrZa9vp1dORvDYbgNvUa6v4RkW1Tk0UVUU1QhUmVcIvWl0OcJQT9ba9Nhzh2WvbANUmA5w50yy7KLTLNC6ZaVwyp7hkTjGrVYRvoFoc12tzz17b6l6b66sDd/baXtPV02m8NlI9ptemBzjVa5uKasEYqq0McIwZnKi37bXhWHbvtSX78dqsUc1GDeIVMo2KasZMQ6gqlK0IcP8B0i2a9BAcWy0AAAAASUVORK5CYII=" width="20px" height="20px" id="mail"> </label>
                 <label><b>Mail: </b><b id="mailid"></b></label><br>
                 <label><img src="https://w7.pngwing.com/pngs/172/660/png-transparent-telephone-computer-icons-mobile-phones-phone-icon-old-phone-telephone-icon-purple-and-black-telephone-logo-text-telephone-call-logo-thumbnail.png"id='phonelogo' height="15px" width="15px">
                     <b>Phone:</b><b id="cell"></b> </label>
-                <b><h4>Personal Details:</h4></b>
-                <div id="personal">
-                <b>Name :</b> <b id="n2"></b><br>
-                <b>DOB:<b id="dob"></b><br>
-                <b>Father name : </b><b id="fthr_name"></b><br>
-                <b>Gender:</b> <b id="g"></b><br>
-                <b>Nationality : </b><b id="nat"></b><br>
-                <b>Hobbies : </b><b id="hb"></b><br>
-                <b>Known Languages : </b><b id="k_lang"></b><br>
-                </div>
-                
-        </div>
-    
-        <div id ="right">
-         <div id="basics">
-            <div id="nc"></div><br>
-            <b></b><br>
-            <b> Email:</b><b id="mail_id"></b><a href="mailto:safeeqameen@gmail.com"></a><br>
-            <b>Phone:</b><tel id="phone"></tel>
-        </div>
+                    </div>
         <hr><hr>
         <div id="o">
         <h4><b>Objective:</b></strong><br></div>
@@ -45,26 +29,39 @@
         <div id="skill">
         <b><h4>Skills:</h4></b>
         <b id="skill_list"></b>
-        <!-- <ul id="skills"> -->
-            <!-- <li>Basics in Programming  Languages like Python,java</li><br>
-            <li>Good in HTML,CSS javascript</li><br>
-            <li>Known Basics Command in MySql</li> -->
+     
         <!-- </ul> -->
         </div>
-        <div id="education">
-        <b><h4>Education:</h4></b>
-        <ul id="ed_list">
-            <!-- <li><b>Degree:  </b> B.Sc Computer Science[2023 passed out] in Manonmanium </li><br>
-            <li><b>HSC: </b>378 85% in Computer Science</li><br>
-            <li><b>SSLC:</b>80%</li><br> -->
-        </ul>
-        </div>
+      
         <div id="exprience">
             <b><h4>Experience</h4></b>
             <ul id="exp_list">
                 
             </ul>
         </div>
+        <div id="project_list">
+            <b><h4>Project:</h4></b>
+            <ul id="proj_list">
+               
+            </ul>
+            </div>
+        <div id="education">
+            <b><h4>Education:</h4></b>
+            <ul id="ed_list">
+               
+            </ul>
+            </div>
+            
+            <b><h4>Personal Details:</h4></b>
+            <div id="personal">
+            <b>Name :</b> <b id="n2"></b><br>
+            <b>DOB:</b><label id="dob"></label><br>
+            <b>Father name : </b><b id="fthr_name"></b><br>
+            <b>Gender:</b> <b id="g"></b><br>
+            <b>Nationality : </b><b id="nat"></b><br>
+            <b>Hobbies : </b><b id="hb"></b><br>
+            <b>Known Languages : </b><b id="k_lang"></b><br>
+            </div>
         <h4><b>Decelartion : </b></h4><ul><li id="dclr"></li></ul>
             </div>
 </div>
@@ -74,13 +71,6 @@
 
         
     </body>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script type="text/javascript" src="resume.js"></script>
-<script>
-var id = getUrlParameter('id');
-alert(id);
-console.log(getresume(id))
-</script>
-
-</html>
+    
+    </html>
+  

@@ -64,7 +64,8 @@ function showarry(ob_id,tbl_id)
     for(let i=0;i<resumeDetails[ob_id].length;i++)
     {
         
-        dispary=dispary+`<div id='${ob_id[i]}'>'${resumeDetails[ob_id][i]}'<button type="button" onclick="de('${ob_id}','${i}')" >x</button></div>`
+        dispary=dispary+`<tr id='${ob_id[i]}'><td>${i+1}'</td><td>'${resumeDetails[ob_id][i]}'</td>
+        <td><button type="button" onclick="de('${ob_id}','${i}')" >x</button></td></tr>`
         console.log(dispary)
     }
     document.getElementById(tbl_id).innerHTML=dispary;
@@ -89,6 +90,7 @@ function showobjed(o_id,tbl_id){
 
 function de(o_id,id_nx)
 {
+    console.log(o_id,id_nx)
    
 let after_del_data=[]
 for(let i=0;i<resumeDetails[o_id].length;i++)
@@ -102,8 +104,9 @@ for(let i=0;i<resumeDetails[o_id].length;i++)
 // console.log(after_del_data)
 resumeDetails[o_id]=after_del_data
 console.log('d',resumeDetails[o_id])
+
     a=document.getElementById(`${o_id[id_nx]}`)
-    // console.log(a)
+     console.log(a)
     a.remove()
      disp()
     // showobjed(resumeDetails[o_id],o_id)
@@ -128,7 +131,7 @@ function dataentry(){
         },
         success:function(a){
             console.log(a)
-            window.location='h.html';
+            window.location='show_table.html';
         },
         error:function(er){
             console.log(er)
@@ -208,11 +211,12 @@ function getresume(i){
                 let parsed_data_data=parsed_data.data.data
                 // console.log("parsed_data_data",parsed_data_data)
                 let p=JSON.parse(parsed_data_data)
+                console.log('p',typeof(p.experience))
                 // console.log("name:",p.name)
                 // let d=document.getElementById("n")
                 // console.log(d)
                 document.getElementById("n").innerHTML=p.name;
-                document.getElementById("nc").innerHTML=p.name;
+                // document.getElementById("nc").innerHTML=p.name;
                 document.getElementById("mailid").innerHTML=p.email;
                 document.getElementById("cell").innerHTML=p.mobile;
                 $('#objective').html(p.objective);
@@ -226,6 +230,7 @@ function getresume(i){
                 $('#dclr').html(p.decelartion)
                 $('#mail_id').html(p.email)
                 $('#phone').html(p.mobile)
+                $('#dob').html(p.dob)
                 // console.log(p.p)
                 // console.log("sk",p.skills[0])
                 let sk='';
@@ -251,20 +256,31 @@ function getresume(i){
                 $('#ed_list').html(ed)
 
                 let exp=''
-                for(let i=0;i<p.experience.length;i++)
+                console.log(p.Experience)
+                for(let i=0;i<p.Experience.length;i++)
                 {
-                    // console.log(p.education[i].ins_name)
-                    exp=exp+`</b><li>Job position:<b>${p.experience[i].level}</b><br>
-                    company name:<b>${p.experience[i].e_name}</b><br>
-                    no of projects:<b>${p.experience[i].percent}</b><br>
-                    year of experience:<b>${p.experience[i].year}</b>
+                    console.log(p.Experience[i].e_name)
+                    exp=exp+`</b><li>Job position:<b>${p.Experience[i].level}</b><br>
+                    company name:<b>${p.Experience[i].e_name}</b><br>
+                    no of projects:<b>${p.Experience[i].percent}</b><br>
+                    year of experience:<b>${p.Experience[i].year}</b>
                     </li>`
                 }
 
                  $('#exp_list').html(exp)
-                // $('#').html(p.);
-
-                // document.getElementById("objective").innerHTML=p.
+                 let proj=''
+                 console.log(p.project)
+                 for(let i=0;i<p.project.length;i++)
+                 {
+                    //  console.log(p.Experience[i].e_name)
+                     exp=exp+`</b><li>Job position:<b>${p.project[i].level}</b><br>
+                     company name:<b>${p.project[i].e_name}</b><br>
+                     no of projects:<b>${p.project[i].percent}</b><br>
+                     year of experience:<b>${p.project[i].year}</b>
+                     </li>`
+                 }
+ 
+                  $('#proj_detail').html(proj)
 
                 let lang=""
                 for(let i=0;i<p.languages_known.length;i++)

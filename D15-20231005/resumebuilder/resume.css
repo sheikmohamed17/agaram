@@ -1,11 +1,52 @@
-#h1{
+h1{
     background-color: aqua;
     text-align: center;
 }
+#h{
+ background-color: cyan;
+}
 h3{
-    background-color: #F5D7DB;
+    color: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 #top_left{
-    width: 40%;
+    width: 45%;
+    display:inline-block;
 
+}
+#personal{
+    display: inline-block;
+width: 45%;
+height: 30%;
+margin-left: 1%;
+
+/* border: 1px solid palevioletred; */
+}
+#skills{
+    display: inline-block;
+    width: 45%;
+    padding-right: 1%;
+    /* border: 1px solid aquamarine; */
+}
+#langs{
+    display: inline-block;
+    width:45%;
+    padding-left: 4%;
+    
+}
+#skill{
+    width:200px
+}
+#skill_add{
+    margin-left: 100%;
+}
+#lang_add{
+    margin-left: 100%;
+}
+#languages{
+width:200px
 }

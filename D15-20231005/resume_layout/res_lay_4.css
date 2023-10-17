@@ -1,0 +1,50 @@
+
+body{
+    margin:0px;
+    
+}
+#basics{
+    margin-left: 72%;
+}
+#objective{
+    margin-left: 6%;
+}
+h4{
+    background-color: lightblue;
+}
+#personal{
+    margin-left: 4%;
+}
+strong{
+    background-color: aqua;
+}
+#left{
+    display:inline-block;
+    width: 25%;
+    vertical-align: top;
+    background-color: rgb(31, 167, 235);
+    line-height: 2;
+
+}
+#right{
+
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(81, 236, 210);
+}
+#top{
+    text-align: right;
+}
+#n,#h{
+    background-color: rgb(6, 183, 59);
+    border-radius: 37px;
+    text-align: center;
+}
+#mail{
+    display: inline-block;
+}
+#profile{
+    height: 42%;
+    width: 98%;
+    display: block;
+}
