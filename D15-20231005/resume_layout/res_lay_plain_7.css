@@ -1,0 +1,14 @@
+ #left{
+     background-color: #ffffff;
+     color: #2d7788;
+}
+#right{
+    
+    background-color: #42A8c0;
+    color: #ffffff;
+} 
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
