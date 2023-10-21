@@ -8,12 +8,12 @@ background-color: burlywood;
 height: 100%;
 }
 #about{
-    background-color: darkgrey;
+    background-color: rgb(7, 229, 237);
     display: inline-block;
 }
 #contact_list{
     display: inline-block;
-    background-color: darkgray;
+    background-color: rgb(7, 229, 237);
 }
 #bottom{
     background-color: whitesmoke;

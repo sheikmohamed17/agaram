@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background-color: rgb(8, 195, 237); */
+    /* background-image: radial-gradient( circle 975px at 2.6% 48.3%,  rgba(0,8,120,1) 0%, rgba(95,184,224,1) 99.7% ); */
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+}
+img:hover{
+    box-shadow: 10px 20px 10px var(--primary-color);
+    width: 325px;
+
+}
+img{
+    width: 300px;
+}

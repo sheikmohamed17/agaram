@@ -6,7 +6,7 @@
 #container
 {
     background-color: rgb(8, 0, 0);
-    width: 98%;
+    width: 56%;
     margin:0% 1%;
 }
 h3,h4{
@@ -28,7 +28,7 @@ h5,p{
 }
 #right{
     background-color: black;
-    width: 68%;
+    width: 48%;
     color: white;
     display: inline-block;
 }

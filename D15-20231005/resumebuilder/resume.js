@@ -160,7 +160,7 @@ function getdata(){
                 <td>${pdata.data[i].user}</td>
                 <td>${pdata.data[i].id}</td>
                 <td> <button onclick="del('${pdata.data[i].id}')">delete</button></td>
-                <td><a href="file:///home/sheik_mohamed/agaram/D15-20231005/resumebuilder/showresume.html?id=${pdata.data[i].id}">ReDirect</a>
+                <td><a href="file:///home/sheik_mohamed/agaram/D15-20231005/resumebuilder/show_layout.html?id=${pdata.data[i].id}">ReDirect</a>
                 </tr>`
             }
             document.getElementById('rdata').innerHTML=th
@@ -206,89 +206,77 @@ function getresume(i){
             success:function(a){
                 console.log("getresume",a)
                 let parsed_data=JSON.parse(a)
-                // console.log("parsed",parsed_data)
-                // console.log("parsed_data",parsed_data.data)
                 let parsed_data_data=parsed_data.data.data
-                // console.log("parsed_data_data",parsed_data_data)
                 let p=JSON.parse(parsed_data_data)
                 console.log('p',typeof(p.experience))
-                // console.log("name:",p.name)
-                // let d=document.getElementById("n")
-                // console.log(d)
-                document.getElementById("n").innerHTML=p.name;
-                // document.getElementById("nc").innerHTML=p.name;
-                document.getElementById("mailid").innerHTML=p.email;
+                document.getElementById("name").innerHTML=p.name;
                 document.getElementById("cell").innerHTML=p.mobile;
+                // $('#date_of_birth').html(p.date_of_birth)
                 $('#objective').html(p.objective);
-                $('#n2').html(p.name);
-                $('#edu').html(p.degree);
-                // $('#fthr_name').html(p.)
-                $('#fthr_name').html(p.personal_detailes.father_name)
-                $('#g').html(p.personal_detailes.gender)
-                $('#nat').html(p.personal_detailes.nationa)
-                $('#hb').html(p.hobbies)
-                $('#dclr').html(p.decelartion)
+                $('#mail_id_1').html(p.email)
+                $('#name_2').html(p.name);
+                $('#name_3').html(p.name);
+                $('#degree').html(p.degree);
+                $('#father_name').html(p.personal_detailes.father_name)
+                $('#gender').html(p.personal_detailes.gender)
+                $('#nation').html(p.personal_detailes.nation)
+                $('#hobbies').html(p.personal_detailes.Hobbies)
+                $('#declartion').html(p.decelartion)
                 $('#mail_id').html(p.email)
                 $('#phone').html(p.mobile)
-                $('#dob').html(p.dob)
-                // console.log(p.p)
-                // console.log("sk",p.skills[0])
-                let sk='';
+                $('#role').html(p.role)
+                $('#date_of_birth').html(p.personal_detailes.dob)
+                let skills_html='';
                  for(let i=0;i<p.skills.length;i++)
                  {
                     
-                    sk=sk+`<li>${p.skills[i]}</li></ul>`
+                    skills_html=skills_html+`<li>${p.skills[i]}</li></ul>`
                     
                  }
-                //  console.log("s",sk)
-                $('#skill_list').html(sk)
-                 console.log("ed",p.education.e_name)
-                let ed=''
+                $('#skill_list').html(skills_html)
+                let education_html=''
                 for(let i=0;i<p.education.length;i++)
                 {
-                    // console.log(p.education[i].ins_name)
-                    ed=ed+`</b><li>Edcuation Level:<b>${p.education[i].level}</b><br>
+                    education_html=education_html+`</b><li>Edcuation Level:<b>${p.education[i].level}</b><br>
                     Institute Name:<b>${p.education[i].e_name}</b><br>
                     Percentage:<b>${p.education[i].percent}</b><br>
                     Passed Out year:<b>${p.education[i].year}</b>
                     </li>`
                 }
-                $('#ed_list').html(ed)
+                $('#education_list').html(education_html)
 
-                let exp=''
+                let experience_html=''
                 console.log(p.Experience)
                 for(let i=0;i<p.Experience.length;i++)
                 {
                     console.log(p.Experience[i].e_name)
-                    exp=exp+`</b><li>Job position:<b>${p.Experience[i].level}</b><br>
+                    experience_html=experience_html+`</b><li>Job position:<b>${p.Experience[i].level}</b><br>
                     company name:<b>${p.Experience[i].e_name}</b><br>
                     no of projects:<b>${p.Experience[i].percent}</b><br>
                     year of experience:<b>${p.Experience[i].year}</b>
                     </li>`
                 }
 
-                 $('#exp_list').html(exp)
-                 let proj=''
+                 $('#experience_list').html(experience_html)
+                 let project_html=''
                  console.log(p.project)
                  for(let i=0;i<p.project.length;i++)
                  {
-                    //  console.log(p.Experience[i].e_name)
-                     exp=exp+`</b><li>Job position:<b>${p.project[i].level}</b><br>
-                     company name:<b>${p.project[i].e_name}</b><br>
+                     project_html=project_html+`</b><li>Job position:<b>${p.project[i].level}</b><br>
+                     company name:<b>${p.project[i].name}</b><br>
                      no of projects:<b>${p.project[i].percent}</b><br>
                      year of experience:<b>${p.project[i].year}</b>
                      </li>`
                  }
  
-                  $('#proj_detail').html(proj)
+                  $('#project_detail').html(project_html)
 
-                let lang=""
+                let languages_html=""
                 for(let i=0;i<p.languages_known.length;i++)
                 {
-                    lang=lang+`${p.languages_known[i]} `
-                    // console.log(p.languages_known[i])
+                    languages_html=languages_html+`${p.languages_known[i]} `
                 }
-                $('#k_lang').html(lang)
+                $('#known_languages').html(languages_html)
                 
             },
             error:function(err){
@@ -340,5 +328,42 @@ jsPDF:
 html2pdf().set(opt). from (page).save();
 }
 
+function getingid(id)
+{
+    $.ajax({
+        type:"GET",
+        url:"http://agaram.academy/api/action.php",
+        data:
+        {
+            request:"get_user_resume",
+            user:"sheikmohamed",
+            resume:resumeDetails
+        },
+        success:function(response){
+            
+            let parsedata=JSON.parse(response)
+            let data=parsedata.data
+            console.log(data)
+            let htmldata='';
+            for(let i=0;i<data.length;i++)
+            {
+                console.log(data[i].id,id)
+                if(data[i].id==id)
+                {
+                htmldata=htmldata+`<li><a href="file:///home/sheik_mohamed/agaram/D15-20231005/resumebuilder/resume_1.html?id=${data[i].id}"><img src="images/newresume1.jpg"</a></li>
+                <li><a href="file:///home/sheik_mohamed/agaram/D15-20231005/resumebuilder/new_resume_layout/resume2.html?id=${data[i].id}"><img src="images/temp1.png"</a></li>
+                <li><a href="file:///home/sheik_mohamed/agaram/D15-20231005/resumebuilder/new_resume_layout/resume4.html?id=${data[i].id}"><img src="images/resume4.png"</a></li>
+                <li><a href="file:///home/sheik_mohamed/agaram/D15-20231005/resumebuilder/new_resume_layout/resume5.html?id=${data[i].id}"><img src="images/resume4.png"</a></li>
+                
+                
+                `
+                }
+            }
+            $('#listdata').html(htmldata)
+        },
+        error:function(error_message){
+            console.log("error",error_message)
+        }
 
-// $('#').html(p.);
+    })
+}

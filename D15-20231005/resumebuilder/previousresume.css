@@ -1,6 +1,7 @@
 
             body{
                 margin:0px;
+                font-family: 'Times New Roman', Times, serif;
                 
             }
             #basics{
@@ -24,6 +25,7 @@
                 vertical-align: top;
                 background-color: aquamarine;
                 line-height: 2;
+                /* height: 120%; */
 
             }
             #right{
@@ -31,6 +33,7 @@
                 display: inline-block;
                 width: 65%;
                 background-color: rgb(170, 178, 214);
+                /* height: 120%; */
             }
             #left img{
                 border-radius: 125px;
@@ -38,7 +41,7 @@
                 margin-top: 1px;
                 align-items: center;
             }
-            #n{
+            #name{
                 background-color: rgb(6, 171, 183);
                 border-radius: 37px;
                 text-align: center;
@@ -47,7 +50,7 @@
                 display: inline-block;
             }
             #profile{
-                height: 42%;
+                height: 40.5%;
                 width: 98%;
                 display: block;
             }
