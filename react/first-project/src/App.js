@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
 import { useState } from 'react';
-
+import Todolist from './todo';
 
 function App() {
 let [startvalue,countfunction]=useState(1);
@@ -18,6 +18,7 @@ let [startvalue,countfunction]=useState(1);
        <Header name="sheik" addata={startvalue} addfivevalue={()=>countfunction(startvalue+5)} />
       {/* </header>
     </div> */}
+    <Todolist />
     </>
   );
 }

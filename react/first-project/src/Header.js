@@ -1,4 +1,4 @@
-import App from "./App"
+
 import Subheader from './Subheader';
 
 function Header(props)
@@ -7,9 +7,10 @@ function Header(props)
         <>
         <b>Welcome {props.name}</b>
         
-       <Subheader  subname="NagerCoil"/>
         <button onClick={props.addfivevalue}>add_five_value</button>
-        {props.addata}
+       <h5> {props.addata}
+       <Subheader  subname="NagerCoil" add_data={props.addata} addfunction={props.addfivevalue} subheaderdata={props.name}/>
+       </h5>
         </>
         )
 }
