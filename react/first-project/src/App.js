@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
 import { useState } from 'react';
+import Apidata from './reactd4/apidata';
 import Todolist from './todo';
 import Linkpage from './reactd4/linkpage';
 import Userlist from './reactd3/usertable';
@@ -14,7 +15,7 @@ import {
 } from "react-router-dom";
 
 function App() {
-  let[isLogged,setIsLogged]=useState({status:false,mail:'s'})
+  let[isLogged,setIsLogged]=useState({status:false,mail:''})
 const router=createBrowserRouter(
   [
     {
@@ -26,13 +27,17 @@ const router=createBrowserRouter(
       element:<Linkpage />
     },
     {
-      path:'/',
+      path:'/userlist',
       element:<Userlist />
     },
     {
-      path:'/loginpage',
+      path:'/',
       element:<CheckLogin isLogged={isLogged} setIsLogged={setIsLogged} />
     },
+    {
+      path:'/apidata',
+      element:<Apidata />
+    }
     
   ]
 )

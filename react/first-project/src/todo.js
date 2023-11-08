@@ -4,10 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Table from 'react-bootstrap/Table';
 import Inputdata from "./reactd3/inputdata";
 import Linkpage from "./reactd4/linkpage";
+import axios from "axios"
 function Todolist(props)
 {
     // let [newdata,add_data]=useState('');
     let [existdata,add_list]=useState(['files','headset','charger'])
+    // alert(JSON.stringify(props))
     const delete_data =(todo_data_value) =>
     {
        let filter_data = existdata.filter(
@@ -16,9 +18,20 @@ function Todolist(props)
        add_list(filter_data)
        
     }
+    const getdata=()=>
+    {
+        axios({
+            method:'get',
+            url:'https://jsonplaceholder.typicode.com/posts'
+        }).then(function(response)
+        {
+            console.log(response)
+        })
+    }
     return(
        
         <>
+         {props.isLogged.status?`welcome ${props.isLogged.mail}`:'guestUser'}
         <Table bordered hover>
             <tr>
             <th>S.No</th>
@@ -41,8 +54,11 @@ function Todolist(props)
           
         </Table>
         <Inputdata  add_list={add_list} existdata={existdata} />
+        <button onClick={()=>getdata()}>Get_Data</button>
         {/* <Linkpage /> */}
-        {props.isLogged?`welcome ${props.email}`:'guestUser'}
+    
+   
+       
         
         {/* {newdata}
         <input type="text" id="newentry" onKeyUp={(e)=>add_data(e.target.value)}/>
@@ -51,10 +67,10 @@ function Todolist(props)
         </>
        
 
-
+      
 
     )
-        
+    console.log('props',props)
     
 }
 export default Todolist

@@ -13,12 +13,13 @@ function CheckLogin(props)
     {
         if(logindata.email=='safeeqameen@gmail.com' && logindata.password==12345678)
         {
-            // alert('Sucess')
-            props.setIsLogged({staus:true,mail:logindata.email})
+            alert('Sucess')
+            props.setIsLogged({status:true,mail:logindata.email})
             navigate('/todo')
         }
         else{
-            props.setIsLogged(false)
+            props.setIsLogged({status:false})
+            navigate('/todo')
             
         }
     }
