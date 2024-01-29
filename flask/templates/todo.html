@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action='/todo' method="post">
+    <h2> To-Do List</h2>
+    <h3>Taking Things</h3>
+    <input type="text" name="itemlist"><input type="submit" value="add">
+    </form>
+   
+    <ol>
+        {%for i in range(list|length)%}
+        <li>{{list[i]}}<a href='/deltodo/{{list[i]}}'>X</a> <label></label><a href='/todoedit/{{i}}'>edit</a></li> 
+        {%endfor%}
+       
+    </ol>
+</body>
+</html>

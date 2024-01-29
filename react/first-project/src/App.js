@@ -3,7 +3,7 @@ import './App.css';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
-import { useState } from 'react';
+import { useState ,useEffect } from 'react';
 import Apidata from './reactd4/apidata';
 import Todolist from './todo';
 import Linkpage from './reactd4/linkpage';
@@ -13,7 +13,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-
+import Timer from './reactd4/timer';
 function App() {
   let[isLogged,setIsLogged]=useState({status:false,mail:''})
 const router=createBrowserRouter(
@@ -37,10 +37,17 @@ const router=createBrowserRouter(
     {
       path:'/apidata',
       element:<Apidata />
+    },
+    {
+      path:'/timer',
+      element:<Timer />
     }
-    
   ]
 )
+// useEffect(()=>{alert(1)})
+  // useEffect(
+  //   ()=>{<Apidata / >}
+  // )
 
   return (
     // <div className="App">
